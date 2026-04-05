@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class P1234 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        while (sc.hasNextLine()) {
+            String linha = sc.nextLine();
+            boolean maiuscula = true;
+            StringBuilder resultado = new StringBuilder();
+            
+            for (char c : linha.toCharArray()) {
+                if (Character.isLetter(c)) {
+                    resultado.append(maiuscula
+                        ? Character.toUpperCase(c)
+                        : Character.toLowerCase(c));
+                    maiuscula = !maiuscula;
+                } else {
+                    resultado.append(c);
+                }
+            }
+            System.out.println(resultado);
+        }
+    }
+}
